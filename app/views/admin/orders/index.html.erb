@@ -13,7 +13,6 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= link_to 'Показать', admin_order_path(order) %></td>
-        <td><%= link_to 'Редактировать', edit_admin_order_path(order) %></td>
         <td><%= link_to 'Удалить', admin_order_path(order), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -22,4 +21,4 @@
 
 <br>
 
-<%= link_to 'Создать', new_admin_order_path %>
+<%= link_to 'Назад', admin_path %>

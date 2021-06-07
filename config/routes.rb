@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
+    get '/', to: 'index#main'
     resources :products
     resources :orders, only: [:index, :show, :destroy]
   end
