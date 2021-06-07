@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Моя корзина</h1>
+
+<% if @products.blank? %>
+  <h2>Корзина пуста</h2>
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.title %> </td>
+          <td><%= link_to 'Показать', product %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <h2>Сумма</h2>
+  <p><%= @products.map{ |product| product.price }.sum %></p>
+
+  <br>
+
+  <p><%= link_to('Оформить заказ', orders_path, method: :post) %></p>
+<% end %>
+
+<br>
+
+<%= link_to ' Назад', '/' %>
