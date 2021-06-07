@@ -24,6 +24,8 @@ RUN bundle install -j "$(getconf _NPROCESSORS_ONLN)" --retry 5 --without develop
 ENV RAILS_ENV production
 ENV RACK_ENV production
 ENV RAILS_ROOT /app
+ENV REDIS_HOST host
+ENV REDIS_PORT 6379
 
 COPY package.json yarn.lock ./
 RUN yarn install --production=false
