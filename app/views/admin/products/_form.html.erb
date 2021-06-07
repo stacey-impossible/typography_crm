@@ -1,4 +1,4 @@
-<%= form_with(model: product) do |form| %>
+<%= form_with(url: admin_products_url) do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -10,6 +10,12 @@
       </ul>
     </div>
   <% end %>
+
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <%= form.label :price %>
+  <%= form.number_field :price %>
 
   <div class="actions">
     <%= form.submit %>

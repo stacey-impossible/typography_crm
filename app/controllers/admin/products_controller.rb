@@ -23,7 +23,7 @@ class Admin::ProductsController < AdminController
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to admin_product(@product), notice: "Product was successfully created."
+      redirect_to admin_product_url(@product), notice: "Product was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,7 +32,7 @@ class Admin::ProductsController < AdminController
   # PATCH/PUT /admin/products/1
   def update
     if @product.update(product_params)
-      redirect_to admin_product(@product), notice: "Product was successfully updated."
+      redirect_to admin_product_url(@product), notice: "Product was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end

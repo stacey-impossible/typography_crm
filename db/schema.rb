@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 2021_06_07_014650) do
   end
 
   create_table "orders_products", force: :cascade do |t|
-    t.bigint "orders_id"
-    t.bigint "products_id"
-    t.index ["orders_id"], name: "index_orders_products_on_orders_id"
-    t.index ["products_id"], name: "index_orders_products_on_products_id"
+    t.bigint "order_id"
+    t.bigint "product_id"
+    t.index ["order_id"], name: "index_orders_products_on_order_id"
+    t.index ["product_id"], name: "index_orders_products_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
