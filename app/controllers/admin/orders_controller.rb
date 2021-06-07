@@ -3,7 +3,7 @@ class Admin::OrdersController < AdminController
 
   # GET /orders
   def index
-    @orders = Order.all
+    @orders = Order.includes(:user).all
   end
 
   # GET /orders/1

@@ -1,3 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Заказ № <%= @order.id %></h1>
+<p>Пользователь <%= @order.user.email %></p>
+<p>Товары: <%= @order.products.map{ |product| product.title }.join(', ') %></p>
+<p>Сумма: <%= @order.products.map{ |product| product.price }.sum %></p>
+
 <%= link_to 'Назад', admin_orders_path %>
