@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @product.title %></h1>
+<p>Цена: <%= @product.price %> рублей</p>
+
 <%= link_to 'Редактировать', edit_admin_product_path(@product) %> |
 <%= link_to 'Назад', admin_products_path %>

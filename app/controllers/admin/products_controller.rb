@@ -31,6 +31,7 @@ class Admin::ProductsController < AdminController
 
   # PATCH/PUT /admin/products/1
   def update
+    binding.pry
     if @product.update(product_params)
       redirect_to admin_product_url(@product), notice: "Product was successfully updated."
     else
@@ -52,6 +53,6 @@ class Admin::ProductsController < AdminController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.fetch(:product, {})
+      params.require(:product).permit(:title, :price)
     end
 end
