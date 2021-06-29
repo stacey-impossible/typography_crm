@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-module Admin
-  class IndexController < AdminController
-    def main; end
-  end
+class Admin::IndexController < AdminController
+  def main; end
 end

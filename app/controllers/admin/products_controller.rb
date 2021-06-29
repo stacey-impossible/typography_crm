@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-module Admin
-  class ProductsController < AdminController
+class Admin::ProductsController < AdminController
     before_action :authenticate_user!
     before_action :set_product, only: %i[show edit update destroy]
 
@@ -59,5 +58,4 @@ module Admin
     def product_params
       params.require(:product).permit(:title, :price)
     end
-  end
 end

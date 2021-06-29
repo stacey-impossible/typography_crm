@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-module Admin
-  class OrdersController < AdminController
+class Admin::OrdersController < AdminController
     before_action :set_order, only: %i[show destroy]
 
     # GET /orders
@@ -29,5 +28,4 @@ module Admin
     def order_params
       params.fetch(:order, {})
     end
-  end
 end
